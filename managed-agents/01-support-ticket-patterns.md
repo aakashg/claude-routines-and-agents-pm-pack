@@ -21,7 +21,11 @@ Most teams prioritize off the loudest tickets, not the most common. The actual p
 
 ## Who builds this
 
-You write the brief. Your engineer wires it — connecting your ticketing system (Zendesk, Intercom, etc.) via MCP. The setup takes a few hours to a day.
+**Starter version:** this agent uses **web browsing + search** by default. That means it scans public complaints on Reddit, G2, Product Hunt, and support forums — not your private ticketing system. A PM can configure it solo in 30 minutes.
+
+**Upgrade version:** to read your *private* Zendesk / Intercom / Freshdesk tickets, your engineer wires an MCP connection. Adds ~1 day of eng work but covers the tickets that never leave your help desk.
+
+Pick based on where your signal actually lives. Consumer product? Reddit and G2 cover it. Enterprise product with NDA-bound customers? You need the MCP upgrade to see the real patterns.
 
 ## What to hand your engineer
 
