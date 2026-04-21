@@ -55,6 +55,18 @@
 - [ ] Per-day invocation cap in your own code (don't rely on platform limits)
 - [ ] Explicit failure modes in the prompt (post to Slack, don't fail silently)
 
+## Do NOT connect these
+
+Explicit deny list — if your security team asks "what are you not doing," point them here:
+
+- ❌ **Personal email accounts** (use company Gmail/Outlook only)
+- ❌ **Admin-scoped Slack tokens** (use channel-scoped only)
+- ❌ **Notion workspaces containing HR / comp / legal data** (use a dedicated PM workspace)
+- ❌ **GitHub orgs with production deploy keys** (read-only scopes only, and not on main branches)
+- ❌ **Any MCP server not on your approved vendor list** (same review process as any third-party vendor)
+- ❌ **Linear/Jira projects tagged confidential** (exclude via project filter, not by trust)
+- ❌ **Customer-facing Zendesk tokens with write access** (read-only — agents analyze patterns, never reply to tickets)
+
 ## Prompt injection mitigation
 
 If any agent reads user-generated content (support tickets, reviews, transcripts), read [prompt-injection-mitigation.md](./prompt-injection-mitigation.md). Covers instruction delimiting, output validation, canary tokens, anomaly detection, and per-agent sensitivity levels.
