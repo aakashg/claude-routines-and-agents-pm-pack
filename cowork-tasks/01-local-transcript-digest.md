@@ -116,6 +116,26 @@ Do not write anything back to me. Execute these steps immediately.
 - **Week 2-3:** the pattern stabilizes. You'll notice action items you'd completely forgotten.
 - **Ongoing:** 10 minutes of reading on Monday morning replaces ~45 minutes of scattered thread re-reading.
 
+## If your transcripts live in the cloud, not on your laptop
+
+If you use Google Drive / Dropbox / iCloud for transcript storage, two options:
+
+**Option A (recommended):** enable the desktop sync client. Google Drive, Dropbox, and iCloud all have desktop apps that mirror cloud folders locally. Point Claude at the synced folder (e.g. `~/Google Drive/My Drive/Transcripts/` or `~/Library/Mobile Documents/com~apple~CloudDocs/Transcripts/`).
+
+- ✅ Works with Cowork — the files appear as local files
+- ✅ Keeps cloud source of truth
+- ⚠ Requires the sync client to be running
+
+**Option B:** skip Cowork entirely and use the Managed Agent version ([`managed-agents/03-meeting-transcript-backlog.md`](../managed-agents/03-meeting-transcript-backlog.md)) with a Google Drive MCP connector. Works for teams, not solo PMs.
+
+## File size guidance
+
+- **Under 100KB per transcript** (typical 30-60 min meeting): no issues
+- **100KB-1MB**: works, but slower. Expect 2-3 min runs instead of under a minute.
+- **Over 1MB**: often means audio files got in alongside transcripts, or you have multi-hour workshop transcripts. Add a filter to the prompt: `Only read files under 500KB — skip larger files and note them as "skipped: too large" in the output.`
+
+If the task times out or errors, file size is the most common cause.
+
 ## When it breaks
 
 - **No output file.** Almost always a permissions issue. Re-prompt and grant access when Claude asks.
