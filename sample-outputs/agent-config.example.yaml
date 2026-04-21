@@ -61,8 +61,19 @@ metadata: {}
 # 2. mcp_servers — only the ones you need. If you see extra connectors here that
 #    weren't in your prompt, remove them before Creating the agent.
 # 3. permission_policy.type — "always_allow" means the agent can use the tool without
-#    asking. For production agents that write to customer-visible systems, consider
-#    "ask_for_confirmation" during the first few weeks.
+#    asking. This is convenient for internal monitoring tasks, but it's NOT a safe
+#    default for your first production deployment of a write-capable agent.
+#
+#    Recommended for first 4 weeks:
+#      permission_policy:
+#        type: ask_for_confirmation      # requires human OK for each tool call
+#    Or:
+#      permission_policy:
+#        type: allow_with_rate_limit
+#        max_calls_per_hour: 10          # caps blast radius if something goes wrong
+#
+#    Only move to "always_allow" after 4 weeks of clean production runs with audit
+#    log review. It's faster, but you've given up a major safety net.
 # 4. system — this is the system prompt. It's editable from the console via Guided Edit
 #    without re-deploying. PMs can tune this; engineers don't need to.
 # 5. tools — the built-in agent_toolset (Bash, File ops, Web search, Web browse,
