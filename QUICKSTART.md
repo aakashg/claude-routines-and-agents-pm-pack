@@ -66,6 +66,16 @@ Do not write anything back to me. Execute these steps immediately.
 
 When the message appears — you now understand the core loop. Prompt → connectors → schedule → output.
 
+## If nothing showed up in Slack
+
+Three checks, in order:
+
+1. **Open the run log** on the Routine detail page. If it shows "failed," it names the step that broke — fix that.
+2. **Re-check your Slack DM ID.** Personal DMs start with `D`, not `C` or `U`. Easy to copy the wrong one.
+3. **Confirm the Slack connector is connected.** Go to [claude.ai](https://claude.ai) → Customize → Connectors. If Slack isn't listed, the Routine had nothing to post through.
+
+Still stuck? Click **Run Now** a second time and watch the run log live. 90% of first-run failures are visible in the first 15 seconds of the log.
+
 ## What you just learned
 
 1. **Prompts are procedures, not questions.** Notice you wrote "Every morning, browse..." not "Can you check the news?"
