@@ -28,7 +28,18 @@ We all have a folder of meeting recordings we haven't gone back to in months. Co
 
 ## Who builds this
 
-Engineer-wired. Needs Notion MCP (write), Slack MCP, and a way to feed transcripts in — either via webhook (Zoom, Google Meet, Otter, Fireflies all support this) or via a simple upload interface.
+Engineer-wired. The agent needs three things:
+1. **Notion MCP (write access)** — to create the structured page
+2. **Slack MCP** — to post the summary
+3. **A way for transcripts to reach the agent** — three common mechanisms:
+
+| Input mechanism | How it works | Effort to set up |
+|---|---|---|
+| **Otter/Fireflies webhook** | Both tools support posting transcripts to a custom URL on meeting end. Point it at the agent's API trigger. | 30 min per integration |
+| **Zoom cloud recording + script** | Zoom can email transcripts. A small server script receives them and forwards to the agent. | ~2 hours |
+| **Manual upload via shared Slack channel** | PMs paste transcripts into `#transcripts-intake`. An agent-trigger bot picks them up. | 1 day (need the bot) |
+
+Pick whichever matches your meeting-recording tool. If you don't record meetings today, this agent is premature — start with the Cowork `01-local-transcript-digest.md` task instead, which reads what you already have.
 
 ## Setup
 
