@@ -96,9 +96,18 @@ Do not write anything back to me. Execute these steps immediately.
 
 Point Claude at your vault instead of `~/Documents/briefs/`:
 
-- **Obsidian:** `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/[VaultName]/Daily/`
+**On macOS:**
+- **Obsidian (iCloud vault):** `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/[VaultName]/Daily/`
+- **Obsidian (local vault):** `~/Documents/Obsidian/[VaultName]/Daily/`
 - **Bear:** Bear doesn't use a file folder — skip this variant or export manually
 - **Logseq:** `~/Logseq/[graph-name]/journals/`
+
+**On Windows:**
+- **Obsidian (local vault):** `C:\Users\[you]\Documents\Obsidian\[VaultName]\Daily\`
+- **Obsidian (OneDrive vault):** `C:\Users\[you]\OneDrive\Obsidian\[VaultName]\Daily\`
+- **Logseq:** `C:\Users\[you]\Logseq\[graph-name]\journals\`
+
+**Use forward slashes in the prompt** even on Windows — Claude Desktop handles path normalization.
 
 Then the brief auto-appears in your daily note without any sync step.
 
