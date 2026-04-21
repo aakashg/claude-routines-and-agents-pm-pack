@@ -83,6 +83,20 @@ Budget accordingly. The OKR pulse running weekly is effectively free. A support 
 3. **A way to see the session log.** Share the link to the Sessions view in the console.
 4. **An escape hatch.** One-line pause command or a kill switch URL if something goes sideways in prod.
 
+## Common PM misconceptions your engineer should expect
+
+The PM handed you this repo. They may also be carrying some assumptions worth correcting up front:
+
+| Misconception | Reality |
+|---|---|
+| *"The prompt is the whole thing."* | The prompt is ~30% of the work. MCP wiring, permission scoping, audit integration, and input plumbing are the rest. |
+| *"If we can just paste the YAML in the console, we're done."* | The console handles the agent. You still need to wire the trigger (webhook, cron, event), the credential vault, and the monitoring. |
+| *"Security review is a rubber stamp."* | Especially if the agent touches customer data. Build the SECURITY.md review into the timeline, not as an afterthought. |
+| *"Once it's shipped, it runs itself."* | Prompts decay (categories drift, competitors rename, OKRs change quarterly). Build a tuning cadence into the deploy. |
+| *"It should never hallucinate."* | It will. The 3+ mention threshold and output validation exist because hallucination is bounded, not zero. Communicate this expectation. |
+
+Spend 10 minutes on these in your kickoff. Saves two weeks of "why isn't it working the way I expected" later.
+
 ## What you need from the PM (so you can ship)
 
 1. The markdown file from this repo with the brackets filled in
