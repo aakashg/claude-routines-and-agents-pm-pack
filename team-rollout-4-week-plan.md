@@ -86,6 +86,33 @@
 | **Monthly** | Review one Routine together. Retune or retire. | 30 min |
 | **Quarterly** | Update OKR pulse agent's KR list. Review security approvals. Prune prompts. | 1 hour |
 
+## Slower variant: 8-week rollout
+
+If your org is more change-averse (regulated industry, distributed team, or PMs are already over-capacity), stretch this over 8 weeks:
+
+| Week | Focus |
+|---|---|
+| 1-2 | You run it yourself. Build credibility with your own before/after. |
+| 3-4 | Two volunteer PMs try it. Not mandatory. You coach them. |
+| 5-6 | Expand to full team with week 1-2 of the fast plan. |
+| 7-8 | Run the "week 3 Managed Agents" milestone. Skip the formal week-4 review — do it at the start of week 9. |
+
+Slower is fine. The compounding still kicks in; you just start later.
+
+## Handling pushback
+
+Common objections and responses:
+
+| Pushback | What's actually going on | Response |
+|---|---|---|
+| *"I don't have time for another tool."* | Valid. They mean "don't make me learn something I won't use." | Start with the 10-min QUICKSTART. If they don't find value in week 1, they opt out, no judgment. |
+| *"Isn't this what Zapier does?"* | Genuine confusion — worth addressing. | Show them the user-sentiment Routine. Zapier can't scan Reddit and summarize themes. That's the concrete differentiator. |
+| *"We should just use ChatGPT for this."* | Org loyalty or existing subscription. | Fine — but Routines run on schedule without you, and serve team-scale via Managed Agents. ChatGPT is on-demand only. Different tool for different jobs. |
+| *"Security will never approve it."* | Sometimes right, sometimes a stall. | Send [SECURITY.md](./SECURITY.md) + [prompt-injection-mitigation.md](./prompt-injection-mitigation.md). Get pattern-level approval in week 0, not per-PM. |
+| *"What if the AI hallucinates?"* | Real concern, usually surfaces on the ticket-pattern use case. | Point at the sample outputs. The 3+ mention threshold filters most hallucinations. Week-4 review catches the rest. |
+
+If you get a pushback not on this list — add it. The doc gets more useful as it absorbs real objections.
+
 ## Common rollout failures (and how to avoid them)
 
 | Failure | Why it happens | Fix |
