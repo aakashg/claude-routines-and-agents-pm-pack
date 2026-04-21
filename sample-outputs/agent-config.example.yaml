@@ -1,0 +1,69 @@
+# Sample YAML — Support Ticket Pattern Analysis agent
+# This is what you'd see in the Claude console after clicking "Generate" on the
+# Quickstart. Use it as a reference when reviewing the YAML your own agent produced.
+
+name: Support Trend Analyst
+model:
+  id: claude-sonnet-4-6
+  speed: standard
+description: >
+  Weekly support ticket trend analyzer that surfaces recurring pain themes from user
+  complaints, forum posts, and reviews - then posts a structured digest to Slack
+  every Monday at 6 AM.
+system: |
+  You are a weekly support trend analyst for [COMPANY], a [ONE LINE: what your product
+  does]. Every Monday at 6 AM, search the web for complaints, forum posts, and review
+  site posts about [YOUR PRODUCT CATEGORY] from the past 7 days. Identify recurring
+  pain themes appearing 3+ times and rank them by frequency. For each theme, capture
+  the name in the customer's own language, ticket count, and whether it maps to any
+  roadmap item in: [LIST YOUR CURRENT ROADMAP ITEMS] (Yes / No / Unknown). If fewer
+  than 10 complaints are found, post to [CHANNEL ID]: "Low volume — [X] tickets.
+  Not enough for pattern analysis." Otherwise post the report exactly in this format —
+  Subject: "Support Pattern Report — Week of [date]", then a table: Theme | Count |
+  On Roadmap?, followed by top 3 themes summarized in one sentence each using
+  customers' actual words, then "Full ticket list available on request."
+mcp_servers:
+  - name: slack
+    type: url
+    url: https://mcp.slack.com/mcp
+  # Your engineer will replace the block below with your ticketing system's MCP.
+  # Zendesk shown here as an example — adapt for Intercom, Freshdesk, etc.
+  # - name: zendesk
+  #   type: url
+  #   url: https://mcp.zendesk.com/mcp
+  #   auth:
+  #     type: oauth2
+  #     credential_ref: vault://zendesk-support-readonly
+  #   scopes:
+  #     - tickets:read
+  #     - users:read
+  #   # Do NOT include tickets:write — this agent reads patterns, never modifies tickets.
+tools:
+  - configs: []
+    default_config:
+      enabled: true
+      permission_policy:
+        type: always_allow
+    type: agent_toolset_20260401
+  - configs: []
+    default_config:
+      enabled: true
+      permission_policy:
+        type: always_allow
+    mcp_server_name: slack
+    type: mcp_toolset
+skills: []
+metadata: {}
+
+# Things to notice when reviewing your own YAML:
+#
+# 1. model.id — confirm Sonnet 4.6 (not Opus — Opus is slower and overkill for monitoring)
+# 2. mcp_servers — only the ones you need. If you see extra connectors here that
+#    weren't in your prompt, remove them before Creating the agent.
+# 3. permission_policy.type — "always_allow" means the agent can use the tool without
+#    asking. For production agents that write to customer-visible systems, consider
+#    "ask_for_confirmation" during the first few weeks.
+# 4. system — this is the system prompt. It's editable from the console via Guided Edit
+#    without re-deploying. PMs can tune this; engineers don't need to.
+# 5. tools — the built-in agent_toolset (Bash, File ops, Web search, Web browse,
+#    Code exec, MCP servers) plus any named MCP servers.
