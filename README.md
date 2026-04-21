@@ -50,6 +50,18 @@ What's your biggest blind spot right now?
 
 **Pick one. Not three. Not all nine. Run it for a week. Then add the next.**
 
+## Pre-flight check — do you have access?
+
+Before you pick a surface, confirm you can actually use it.
+
+| Surface | Requires | Check by |
+|---|---|---|
+| **Cowork Scheduled Tasks** | Claude Desktop app installed + any paid plan | Open Claude Desktop → Settings → Scheduled Tasks. If the menu exists, you're in. |
+| **Routines** | Pro / Max / Team / Enterprise plan | Visit [claude.ai/code/routines](https://claude.ai/code/routines). If you see the "Create routine" button, you're in. |
+| **Managed Agents** | Platform access (typically Enterprise) | Visit [platform.claude.com](https://platform.claude.com) → Managed Agents. If "Quickstart" is in the sidebar, you're in. |
+
+If you're on the free tier, none of these work — upgrade first.
+
 ## Three surfaces, one decision
 
 Anthropic shipped three ways to run AI on a schedule. Use this to pick:
