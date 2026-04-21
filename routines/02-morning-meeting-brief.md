@@ -84,6 +84,21 @@ When summarizing meetings with engineers, prioritize open PRs, design specs, and
 When summarizing meetings with sales, prioritize deal status, objections, and pipeline asks.
 ```
 
+**If you have more than 5-6 meetings on a heavy day**, cap the output so the Slack DM stays readable:
+
+```
+After identifying all meetings, rank them by priority:
+- External customer calls: highest
+- 1:1s with your manager or skip-level: high
+- Product reviews, design reviews, planning: high
+- Standing internal syncs with no specific agenda: low
+
+Write briefings for the top 5 by priority. For the rest, post
+a one-line list at the bottom: "Other meetings today: [titles]."
+```
+
+Without this cap, a 10-meeting day produces a Slack message too long to read on your phone.
+
 **If you're new at your company or working with recent hires**, change the lookback from 45 days to 14 days:
 
 ```
