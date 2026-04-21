@@ -6,11 +6,14 @@
 
 ## Slack channel ID
 
-**For a public or private channel:**
-1. Open Slack (desktop or web)
-2. Click the channel name at the top of the channel
-3. Scroll to the bottom of the popup
-4. Copy the ID — starts with `C` (e.g. `C06PRODUCT1`)
+**For a public or private channel (desktop app OR web):**
+1. Open Slack
+2. Click the channel name at the top of the channel header
+3. In the popup, click the **About** tab (may default to it)
+4. Scroll to the bottom of the About section
+5. Copy the Channel ID — starts with `C` (e.g. `C06PRODUCT1`)
+
+**Alternative (works on web only):** look at the URL — `https://app.slack.com/client/T.../C06PRODUCT1` — the part after the last `/` that starts with `C` is the channel ID.
 
 **For your personal DM (where Routines will post just to you):**
 1. In Slack, click your own name in the sidebar (Messages → your name)
@@ -27,12 +30,21 @@ Same as personal DM, but open the DM with them first.
 
 1. Open the Notion page you want Claude to write to
 2. Click **Share** in the top right → **Copy link**
-3. Paste the URL — it looks like `https://www.notion.so/yourspace/Page-Name-abc123def456`
-
-**Notion database URL (for Managed Agents that create new pages per meeting, etc.):**
-1. Open the database view (not a single page inside it)
-2. Click **Share** → **Copy link**
 3. Paste the URL
+
+**What a page URL looks like:**
+```
+https://www.notion.so/yourspace/Competitor-Pricing-Log-abc123def456
+```
+The 32-character hex string at the end is the page ID.
+
+**What a database URL looks like** (note the `?v=` parameter, which page URLs don't have):
+```
+https://www.notion.so/yourspace/Meeting-Notes-DB-abc123def456?v=xyz789
+```
+
+**Use a page URL** when: the Routine overwrites the same page on each run (competitor pricing, OKR state).
+**Use a database URL** when: the Managed Agent creates a new page per run (meeting transcripts, weekly reports).
 
 ---
 
