@@ -1,6 +1,6 @@
 # Claude Routines + Managed Agents — PM Pack
 
-Companion repo for [Opus 4.7 + Claude Routines & Managed Agents = PM Magic](https://news.aakashg.com).
+Companion repo for [Inside Anthropic's New Automation Layer: 7 Workflows PMs Can Run This Week](https://www.news.aakashg.com/p/claude-automation-pms).
 
 Seven production-ready prompts, sample outputs, an engineer handoff brief, security doc, and a measurement framework. Copy, paste, ship.
 
