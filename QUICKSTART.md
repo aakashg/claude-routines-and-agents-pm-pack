@@ -2,6 +2,8 @@
 
 **No Notion. No engineer. No OAuth beyond Slack. If you have a paid Claude plan, you can run this right now.**
 
+> **Cowork alternative:** prefer a local markdown file over Slack? Same idea, different surface — see [`cowork-tasks/02-morning-brief-to-local-folder.md`](./cowork-tasks/02-morning-brief-to-local-folder.md). Requires Claude Desktop.
+
 ---
 
 ## The goal

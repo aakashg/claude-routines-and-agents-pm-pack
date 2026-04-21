@@ -2,7 +2,7 @@
 
 Companion repo for [Inside Anthropic's New Automation Layer: 7 Workflows PMs Can Run This Week](https://www.news.aakashg.com/p/claude-automation-pms).
 
-Seven production-ready prompts, sample outputs, an engineer handoff brief, security doc, and a measurement framework. Copy, paste, ship.
+Nine production-ready prompts across three surfaces (Cowork Scheduled Tasks, Routines, Managed Agents), sample outputs, engineer handoff brief, security doc, and a measurement framework. Copy, paste, ship.
 
 ---
 
@@ -25,6 +25,12 @@ What's your biggest blind spot right now?
 ├─ "Sales finds out about competitor pricing before I do"
 │     → routines/01-competitor-pricing.md  (personal, 15 min setup)
 │
+├─ "I have months of meeting transcripts I never re-read"
+│     → cowork-tasks/01-local-transcript-digest.md  (personal, local files)
+│
+├─ "I want my morning brief as a markdown file, not Slack"
+│     → cowork-tasks/02-morning-brief-to-local-folder.md  (personal, Obsidian-friendly)
+│
 ├─ "I'm prioritizing off loudest tickets, not most common"
 │     ├─ Solo PM, no eng capacity?
 │     │     → routines/03-weekly-user-sentiment.md  (personal, public data only)
@@ -42,7 +48,22 @@ What's your biggest blind spot right now?
          Team → managed-agents/02-competitive-intelligence.md
 ```
 
-**Pick one. Not three. Not all seven. Run it for a week. Then add the next.**
+**Pick one. Not three. Not all nine. Run it for a week. Then add the next.**
+
+## Three surfaces, one decision
+
+Anthropic shipped three ways to run AI on a schedule. Use this to pick:
+
+| Surface | Where it runs | What it can touch | Laptop closed? | Best for |
+|---|---|---|---|---|
+| **Cowork Scheduled Tasks** | Your desktop | Local files + connectors | ❌ Must be awake | *"Save markdown briefs to ~/Documents/briefs"* |
+| **Claude Routines** | Anthropic's cloud | Connectors + web (no local files) | ✅ Yes | *"Post to Slack DM while I'm asleep"* |
+| **Managed Agents** | Anthropic's platform | MCP tools, per-user isolated | ✅ Yes | *"Every PM queries the support-ticket agent"* |
+
+**Three questions to pick:**
+1. Does the work need your **local files**? → Cowork.
+2. Does it need to fire while you're **asleep, on a flight, or off your machine**? → Routine.
+3. Does it need to serve **more than just you**, with per-user context? → Managed Agent.
 
 ---
 
@@ -57,7 +78,12 @@ What's your biggest blind spot right now?
 ├── team-rollout-4-week-plan.md        # For PM managers rolling out to a team
 ├── appendix-connector-ids.md          # One canonical "getting IDs" reference
 │
-├── routines/                          # For YOUR work — no engineer needed
+├── cowork-tasks/                      # For YOUR work with LOCAL files
+│   ├── README.md                      # When to pick Cowork over Routines
+│   ├── 01-local-transcript-digest.md  # Scan ~/Documents/Transcripts/ weekly
+│   └── 02-morning-brief-to-local-folder.md  # Morning brief as markdown file
+│
+├── routines/                          # For YOUR work — no engineer, runs in cloud
 │   ├── 01-competitor-pricing.md
 │   ├── 02-morning-meeting-brief.md
 │   ├── 03-weekly-user-sentiment.md
@@ -83,6 +109,19 @@ What's your biggest blind spot right now?
 ```
 
 ---
+
+## 60-second setup (for Cowork Scheduled Tasks)
+
+If you want local file access and are fine with your laptop needing to be awake:
+
+1. Install Claude Desktop ([claude.ai/download](https://claude.ai/download))
+2. Settings → Scheduled Tasks → **New Scheduled Task**
+3. Copy a prompt from `/cowork-tasks` into the task description
+4. Grant file system access when prompted — **scope narrowly** (one folder, not all of Documents)
+5. Click **Run Now** before scheduling
+6. Confirm the output file landed. Then let the schedule run.
+
+**Gotcha:** Cowork won't run while your laptop is asleep or closed. Missed runs don't catch up. For anything mission-critical on a schedule, use a Routine instead.
 
 ## 60-second setup (for Routines)
 
@@ -157,7 +196,7 @@ Start with [managed-agents/engineer-handoff-brief.md](./managed-agents/engineer-
 
 ## For solo PMs (no eng support)
 
-You can run the three files in `/routines/` today, no eng needed. The four in `/managed-agents/` require an engineer. That's not a soft requirement — they need MCP connections to your company's ticketing/PM tools, which require creds and wiring.
+You can run everything in `/routines/` and `/cowork-tasks/` today, no eng needed. The four in `/managed-agents/` require an engineer. That's not a soft requirement — they need MCP connections to your company's ticketing/PM tools, which require creds and wiring.
 
 ---
 
