@@ -91,4 +91,45 @@ ___
 
 ---
 
+## Template: sharing findings with your team or leadership
+
+Use this if you need to write up the 4-week result for a skip-level, a team update, or a quarterly review. Copy, fill in, cut as needed.
+
+```
+Subject: 4-week review — Claude Routines + Agents pilot
+
+Tl;dr — [kept / expanded / killed] after 4 weeks. Net [hours saved/week]
+across [N] PMs.
+
+What we ran
+- [Routine/Agent name] — [frequency]
+- [Routine/Agent name] — [frequency]
+
+What changed in decisions (not in time saved — in decisions)
+1. [specific decision changed + agent output that changed it]
+2. [another]
+3. [another]
+
+What broke
+- [connector/permissions/format issue] — [what we did about it]
+
+What surprised us
+- [the orphaned initiative / the ticket pattern nobody saw / the
+   competitor move sales already missed]
+
+What we're doing next
+- Keep: [list]
+- Tune: [list + specific prompt changes]
+- Kill: [list + reason]
+- Expand: [next PMs or next use cases]
+
+Cost: $[X]/week. Under our $[budget] threshold, so no finance
+conversation needed. / Over threshold — see attached cost doc.
+
+Security posture: reviewed with [name] on [date]. Pattern-level
+approval covers: [list agents]. Out of scope: [list].
+```
+
+---
+
 *If you learned something surprising, send it to the newsletter. This is the kind of thing that helps the next person avoid a wasted month.*
