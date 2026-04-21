@@ -56,7 +56,18 @@ Rough numbers for budget discussions:
 | Meeting transcript agent | ~20 meetings | ~20k in, ~3k out each | ~$1.50 |
 | OKR pulse agent | 1 | ~50k in, ~2k out | ~$0.20 |
 
-Total for all seven, if fully adopted: **under $5/week per team**. Scale concerns kick in at ~100x this — real-time, high-volume use cases.
+Total for all seven, if fully adopted: **under $5/week per team**.
+
+### Cost scaling scenarios
+
+| Scenario | Weekly cost | When you'd see this |
+|---|---|---|
+| **1x — one PM, all 9 workflows** | ~$5 | Default. The numbers above. |
+| **10x — 10 PMs on a team** | ~$50 | Each PM runs personal Routines, plus team shares the Managed Agents. |
+| **50x — real-time support ticket agent** | ~$200-400 | Agent fires on every ticket (not weekly batch). Only justified at high ticket volume with clear ROI. |
+| **100x — agents embedded in-product** | ~$1000+ | Agent runs per-user query, not per-team batch. Now you're in API-pricing territory — do the math per-feature. |
+
+**Rule of thumb:** if you're under $500/week, stop worrying about cost and focus on quality. Above $500/week, someone (you or finance) needs a specific ROI story.
 
 ## What the repo does NOT cover
 
